@@ -34,13 +34,14 @@ This project was built **for hands-on practice of Swiper.js**, focusing on:
 
 ## 📂 Project Structure
 
-SwiperProject/\n
-│── index.html\n
-│── style.css\n
-│── script.js\n
-│── imageCollector.js\n
-├── README.md\n
-
+```text
+SwiperProject/
+│── index.html
+│── style.css
+│── script.js
+│── imageCollector.js
+├── README.md
+```
 ---
 
 ### 💡 Why this wording is GOOD
