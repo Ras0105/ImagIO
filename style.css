@@ -96,8 +96,11 @@ h2 {
    Swiper Container
 ================================ */
 .swiper {
+  position: relative;
+  isolation: isolate;
   width: 100%;
   max-width: 900px;
+  min-height:420px;
   margin-top: 40px;
   border-radius: 16px;
   overflow: hidden;
@@ -143,6 +146,65 @@ h2 {
   color: #e5e7eb;
   transition: background-color 0.2s ease;
 }
+/* ===============================
+   HUD / SCI-FI BORDER
+================================ */
+.swiper::before {
+  content: "";
+  z-index:10;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+
+  border: 2px solid #38bdf8;
+
+  clip-path: polygon(
+    12px 0%,
+    calc(100% - 12px) 0%,
+    100% 12px,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    12px 100%,
+    0% calc(100% - 12px),
+    0% 12px
+  );
+
+  box-shadow:
+    0 0 12px rgba(56, 189, 248, 0.6),
+    inset 0 0 12px rgba(56, 189, 248, 0.35);
+}
+
+.swiper::after {
+  content: "";
+  position: absolute;
+  z-index:5;
+  inset: 4px;
+  z-index: 1;
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      rgba(56, 189, 248, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(56, 189, 248, 0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 40px 40px;
+
+  box-shadow:
+    inset 0 0 40px rgba(56, 189, 248, 0.15);
+}
+.swiper-wrapper,
+.swiper-slide {
+  position: relative;
+  z-index: 1;
+}
+
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
@@ -154,6 +216,12 @@ h2 {
   font-size: 16px;
   font-weight: bold;
 }
+.swiper-button-next,
+.swiper-button-prev,
+.swiper-pagination {
+  z-index: 20;
+}
+
 
 /* ===============================
    Pagination
