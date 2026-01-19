@@ -1,0 +1,40 @@
+.hud-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+
+  border: 2px solid #38bdf8;
+
+  clip-path: polygon(
+    12px 0%,
+    calc(100% - 12px) 0%,
+    100% 12px,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    12px 100%,
+    0% calc(100% - 12px),
+    0% 12px
+  );
+
+  box-shadow:
+    0 0 12px rgba(56, 189, 248, 0.6),
+    inset 0 0 12px rgba(56, 189, 248, 0.35);
+}
+
+.hud-frame::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  pointer-events: none;
+  z-index: 5;
+
+  background:
+    linear-gradient(rgba(56,189,248,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56,189,248,.08) 1px, transparent 1px);
+
+  background-size: 40px 40px;
+
+  box-shadow: inset 0 0 40px rgba(56,189,248,.15);
+}
